@@ -1,0 +1,22 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.nav-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #2995c3;
+    border: 1px solid #2995c3;
+}
