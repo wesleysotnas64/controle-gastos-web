@@ -4,7 +4,11 @@ import { API_ROUTES } from "../../../services/apiRoutes";
 import './ListPeople.css';
 import api from "../../../services/api";
 
-function ListPeople() {
+interface ListPeopleProps {
+    onEditClick: (person: Person) => void;
+}
+
+function ListPeople({ onEditClick }: ListPeopleProps) {
     const [people, setPeople] = useState<Person[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -65,7 +69,7 @@ function ListPeople() {
                                             <td className="actions-cell">
                                                 <button
                                                     className="btn-edit"
-                                                    onClick={() => alert('Em breve: lógica de edição')}
+                                                    onClick={() => onEditClick(person)}
                                                 >
                                                     Alterar
                                                 </button>

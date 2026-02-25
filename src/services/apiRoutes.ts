@@ -3,7 +3,8 @@ export const API_ROUTES = {
     GET_ALL: '/person/get-all',
     CREATE: '/person/create',
     DELETE: (id: string) => `/person/delete/${id}`,
-    GET_BY_ID: (id: string) => `/person/get/${id}`, // Rota com parâmetro
+    GET_BY_ID: (id: string) => `/person/get/${id}`,
+    UPDATE: (id: string) => `/person/update/${id}`,
   },
   CATEGORY: {
     GET_ALL: '/category/get-all',

@@ -22,7 +22,6 @@
 }
 
 .registration-area button {
-    background-color: #0b6136;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -32,6 +31,22 @@
     transition: 0.3s;
 }
 
-.registration-area button:hover {
+.btn-register {
+    background-color: #0b6136;
+}
+.btn-cancel {
+    background-color: #898989;
+}
+.btn-save {
+    background-color: #0284c7;
+}
+
+.registration-area .btn-register:hover {
     background-color: #08833d;
+}
+.registration-area .btn-cancel:hover {
+    background-color: #9d9d9d;
+}
+.registration-area .btn-save:hover {
+    background-color: #149de1;
 }
