@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Person, PersonDeleteDTO } from "../../../types/person/Person";
+import type { Person, PersonDeleteDTO } from "../../../types/Person";
 import { API_ROUTES } from "../../../services/apiRoutes";
 import './ListPeople.css';
 import api from "../../../services/api";

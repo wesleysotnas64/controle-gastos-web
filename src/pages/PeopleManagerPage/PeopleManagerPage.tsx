@@ -2,7 +2,7 @@ import { useState } from "react";
 import ListPeople from "./ListPeople/ListPeople";
 import api from "../../services/api";
 import { API_ROUTES } from "../../services/apiRoutes";
-import type { Person } from "../../types/person/Person";
+import type { Person } from "../../types/Person";
 import './PeopleManagerPage.css'
 
 function PeopleManagerPage () {
