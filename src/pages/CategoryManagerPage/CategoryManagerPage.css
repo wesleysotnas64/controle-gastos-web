@@ -12,6 +12,10 @@
     border-radius: 10px;
 }
 
+.registration-area .input-description {
+    width: 50%;
+}
+
 .select-purpose {
     background-color: rgb(25, 33, 36);
     border: 1px solid rgb(51, 82, 91);

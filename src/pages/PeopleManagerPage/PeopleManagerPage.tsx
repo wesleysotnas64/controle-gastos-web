@@ -65,7 +65,7 @@ function PeopleManagerPage () {
         <>
             <div className="manager-container">
                 <div className="registration-area">
-                    <input 
+                    <input className="input-name"
                         type="text"
                         placeholder="Nome da Pessoa"
                         value={name}

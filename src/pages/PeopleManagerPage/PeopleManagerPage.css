@@ -31,6 +31,10 @@
     transition: 0.3s;
 }
 
+.registration-area .input-name {
+    width: 50%;
+}
+
 .btn-register {
     background-color: #0b6136;
 }

@@ -3,6 +3,7 @@ import './CategoryManagerPage.css'
 import { CategoryPurpose, type CategoryPurposeType, type CreateCategoryDTO } from '../../types/Category';
 import api from '../../services/api';
 import { API_ROUTES } from '../../services/apiRoutes';
+import ListCategory from './ListCategory/ListCategory';
 
 function CategoryManagerPage() {
     const [description, setDescription] = useState("");
@@ -37,7 +38,7 @@ function CategoryManagerPage() {
         <>
         <div className="manager-container">
             <div className="registration-area">
-                <input 
+                <input className="input-description"
                     type="text"
                     placeholder="Descrição (ex: Lazer, Salário...)"
                     value={description}
@@ -57,10 +58,9 @@ function CategoryManagerPage() {
                 <button onClick={handleRegister} className="btn-register">
                     Cadastrar
                 </button>
-
-                {/* Aqui deve ser um elemento select onde o usuário pode escolher o tipo.
-                A categoria pode ser receita, despesa ou ambas. */}
             </div>
+
+            <ListCategory />
         </div>
         </>
     );
