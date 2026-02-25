@@ -59,7 +59,7 @@ function ListCategory() {
                             
                             <tr key={cat.id}>
                                 <td>{cat.description}</td>
-                                <td>
+                                <td style={{textAlign: 'center'}}>
                                     <span className={`purpose-tag ${getPurposeStyle(cat.purpose)}`}>
                                         {getPurposeLabel(cat.purpose)}
                                     </span>

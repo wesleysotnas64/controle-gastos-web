@@ -1,0 +1,56 @@
+.transaction-table {
+    background-color: rgb(35, 43, 46);
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.transaction-table th {
+    background-color: rgb(37, 53, 58);
+    color: #e2e8f0;
+}
+
+.transaction-table th, .transaction-table td {
+    border-top: 1px solid rgb(31, 62, 71);
+    padding: 10px;
+    text-align: left;
+}
+
+/* --- EFEITO ZEBRA --- */
+/* Pinta as linhas ímpares (odd) com uma cor levemente mais clara ou escura */
+.transaction-table tbody tr:nth-child(odd) {
+    background-color: rgb(38, 48, 52); 
+}
+
+.transaction-table tbody tr:hover {
+    background-color: rgb(45, 80, 92);
+    transition: background-color 0.2s ease;
+}
+
+.transaction-table th {
+    border-top: none;
+}
+
+
+/* No seu ListTransaction.css */
+
+.value-income {
+    color: #81c784; /* Verde */
+    font-weight: bold;
+    text-align: right;
+}
+
+.value-expense {
+    color: #e57373; /* Vermelho */
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Alinhando os cabeçalhos de valor à direita para combinar com os números */
+.transaction-table th:last-child,
+.transaction-table td:last-child {
+    text-align: right;
+}
+
