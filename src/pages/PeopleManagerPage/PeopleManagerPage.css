@@ -22,7 +22,7 @@
 }
 
 .registration-area button {
-    background-color: #0b4961;
+    background-color: #0b6136;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -33,5 +33,5 @@
 }
 
 .registration-area button:hover {
-    background-color: #086083;
+    background-color: #08833d;
 }

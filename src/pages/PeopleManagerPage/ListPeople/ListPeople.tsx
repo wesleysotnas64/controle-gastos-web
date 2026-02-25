@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Person } from "../../../types/person/Person";
+import type { Person, PersonDeleteDTO } from "../../../types/person/Person";
 import { API_ROUTES } from "../../../services/apiRoutes";
 import './ListPeople.css';
 import api from "../../../services/api";
@@ -19,6 +19,18 @@ function ListPeople() {
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleDelete = async (personDeleteDTO: PersonDeleteDTO) => {
+        if (window.confirm(`Tem certeza que deseja remover ${personDeleteDTO.name}?`)) {
+            try {
+                await api.delete(API_ROUTES.PERSON.DELETE(personDeleteDTO.id));
+                alert("Pessoa removida com sucesso!");
+                fetchPeople();
+            } catch (error) {
+                console.error("Erro ao deletar:", error);
+            }
+        };
     };
 
     useEffect(() => {
@@ -41,6 +53,7 @@ function ListPeople() {
                                 <tr>
                                     <th>Nome</th>
                                     <th>Idade</th>
+                                    <th style={{textAlign: 'center'}}>Operações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,7 +61,21 @@ function ListPeople() {
                                     people.map((person) => (
                                         <tr key={person.id}>
                                             <td>{person.name}</td>
-                                            <td>{person.age}</td>
+                                            <td>{person.age} {person.age <= 1 ? "ano" : "anos"}</td>
+                                            <td className="actions-cell">
+                                                <button
+                                                    className="btn-edit"
+                                                    onClick={() => alert('Em breve: lógica de edição')}
+                                                >
+                                                    Alterar
+                                                </button>
+                                                <button
+                                                    className="btn-delete"
+                                                    onClick={() => handleDelete({ id: person.id, name: person.name })}
+                                                >
+                                                    Remover
+                                                </button>
+                                            </td>
                                         </tr>
                                     ))
                                 }

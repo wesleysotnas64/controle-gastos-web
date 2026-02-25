@@ -2,6 +2,7 @@ export const API_ROUTES = {
   PERSON: {
     GET_ALL: '/person/get-all',
     CREATE: '/person/create',
+    DELETE: (id: string) => `/person/delete/${id}`,
     GET_BY_ID: (id: string) => `/person/get/${id}`, // Rota com parâmetro
   },
   CATEGORY: {
