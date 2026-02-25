@@ -1,0 +1,40 @@
+.list-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.people-table {
+    background-color: rgb(35, 43, 46);
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.people-table th {
+    background-color: rgb(37, 53, 58);
+    color: #e2e8f0;
+}
+
+.people-table th, .people-table td {
+    border-top: 1px solid rgb(31, 62, 71);
+    padding: 10px;
+    text-align: left;
+}
+
+/* --- EFEITO ZEBRA --- */
+/* Pinta as linhas ímpares (odd) com uma cor levemente mais clara ou escura */
+.people-table tbody tr:nth-child(odd) {
+    background-color: rgb(38, 48, 52); 
+}
+
+.people-table tbody tr:hover {
+    background-color: rgb(45, 80, 92);
+    cursor: pointer;        
+    transition: background-color 0.2s ease;
+}
+
+.people-table th {
+    border-top: none;
+}

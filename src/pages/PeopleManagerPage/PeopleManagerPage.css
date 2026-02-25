@@ -1,0 +1,37 @@
+.manager-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.registration-area input {
+    background-color: rgb(25, 33, 36);
+    border: 1px solid rgb(51, 82, 91);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.registration-area button {
+    background-color: #0b4961;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.registration-area button:hover {
+    background-color: #086083;
+}
