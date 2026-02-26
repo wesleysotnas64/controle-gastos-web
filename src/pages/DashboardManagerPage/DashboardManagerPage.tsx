@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./DashboardManagerPage.css";
 import TotalsByPerson from "./TotalsByPerson/TotalsByPerson";
+import TotalsByCategory from "./TotalsByCategory/TotalsByCategory";
 
 function DashboardManagerPage () {
 
@@ -32,11 +33,7 @@ function DashboardManagerPage () {
                 {activeTab === "person" ? (
                     <TotalsByPerson />
                 ) : (
-                    <div className="placeholder-area">
-                        <h3>Consulta por Categorias</h3>
-                        <p>O componente de análise por categorias será implementado aqui em breve.</p>
-                        <div className="skeleton-loader"></div>
-                    </div>
+                    <TotalsByCategory />
                 )}
             </main>
         </div>

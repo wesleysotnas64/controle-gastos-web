@@ -16,5 +16,6 @@ export const API_ROUTES = {
   },
   DASHBOARD: {
     TOTALS_BY_PERSON: '/dashboard/totals-by-person',
+    TOTALS_BY_CATEGORY: '/dashboard/totals-by-category',
   }
 } as const;
