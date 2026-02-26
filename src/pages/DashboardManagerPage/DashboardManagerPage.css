@@ -1,0 +1,61 @@
+.dashboard-container {
+    padding: 20px;
+    color: #e2e8f0;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(51, 82, 91);
+    padding-bottom: 20px;
+}
+
+.dashboard-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 1px solid rgb(51, 82, 91);
+    color: #94a3b8;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-button:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #f8fafc;
+}
+
+.nav-button.active {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+}
+
+/* Estilo para o componente que ainda não existe */
+.placeholder-area {
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(35, 43, 46);
+    border-radius: 8px;
+    border: 2px dashed rgb(51, 82, 91);
+}
+
+.skeleton-loader {
+    height: 200px;
+    background: linear-gradient(90deg, #232b2e 25%, #2d373b 50%, #232b2e 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}

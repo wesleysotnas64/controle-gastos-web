@@ -1,0 +1,77 @@
+.total-values-area {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+.total-values-area .box-total-area {
+    background-color: rgb(25, 31, 35);
+    width: 300px;
+    border-radius: 10px;
+    height: 100px;
+}
+.box-total-area {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.box-total-area .value-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.box-total-area p {
+    margin: 0px;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.box-total-area label {
+    margin: 0px;
+    margin-top: auto;
+}
+
+.total-by-person-table {
+    background-color: rgb(35, 43, 46);
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.total-by-person-table th,
+.total-by-person-table tfoot {
+    background-color: rgb(37, 53, 58);
+    color: #e2e8f0;
+}
+
+.total-by-person-table th,
+.total-by-person-table td,
+.total-by-person-table tfoot {
+    border-top: 1px solid rgb(31, 62, 71);
+    padding: 10px;
+    text-align: left;
+}
+
+/* --- EFEITO ZEBRA --- */
+/* Pinta as linhas ímpares (odd) com uma cor levemente mais clara ou escura */
+.total-by-person-table tbody tr:nth-child(odd) {
+    background-color: rgb(38, 48, 52); 
+}
+
+.total-by-person-table tbody tr:hover {
+    background-color: rgb(45, 80, 92);
+    transition: background-color 0.2s ease;
+}
+
+.total-by-person-table th {
+    border-top: none;
+}
+
+.table-footer {
+    font-weight: bold;
+}

@@ -14,7 +14,7 @@ export const API_ROUTES = {
     CREATE: '/transaction/create',
     GET_ALL: '/transaction/get-all',
   },
-  REPORTS: {
-    TOTALS_BY_PERSON: '/reports/totals-by-person',
+  DASHBOARD: {
+    TOTALS_BY_PERSON: '/dashboard/totals-by-person',
   }
 } as const;
