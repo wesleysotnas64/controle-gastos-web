@@ -10,6 +10,7 @@
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 .registration-area input {
@@ -19,6 +20,7 @@
     padding: 10px;
     border-radius: 5px;
     outline: none;
+    font-size: 1rem;
 }
 
 .registration-area button {

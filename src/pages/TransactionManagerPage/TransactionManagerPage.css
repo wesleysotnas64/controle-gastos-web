@@ -1,0 +1,95 @@
+.transaction-registration-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.transaction-registration-area input,
+.transaction-registration-area select {
+    background-color: rgb(25, 33, 36);
+    color: #e2e8f0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Ajustes específicos para o Select */
+
+
+/* Estilização das opções (limitada pelo navegador, mas ajuda no Dark Mode) */
+/* .transaction-registration-area option {
+    background-color: rgb(35, 43, 46);
+    color: #f8fafc;
+} */
+
+/* Botão de Registro personalizado */
+.btn-register {
+    background-color: #136827;
+    color: #e3e3e3;
+    font-weight: bold;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    /* margin-top: 10px; */
+}
+
+.btn-register:hover {
+    background-color: #1b8a35;
+}
+
+.btn-register:active {
+    transform: scale(0.98);
+}
+
+.transaction-select-area,
+.transaction-input-area {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.transaction-input-area input{
+    background-color: rgb(25, 33, 36);
+    border: 1px solid rgb(51, 82, 91);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-description{
+    flex-grow: 1;
+}
+
+.input-value {
+    width: 20%;
+    text-align: right;
+    margin-left: 20px;
+}
+
+.transaction-select-area {
+    gap: 10px;
+    
+}
+.transaction-select-area select {
+    background-color: rgb(25, 33, 36);
+    border: 1px solid rgb(51, 82, 91);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.transaction-select-area .select-type,
+.transaction-select-area .select-people,
+.transaction-select-area .select-category {
+    flex-grow: 1;
+}

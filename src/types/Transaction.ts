@@ -10,3 +10,11 @@ export interface TransactionListItemDTO {
     categoryId: string;
     categoryDescription: string;
 }
+
+export interface TransactionCreateDTO {
+    description: string;
+    value: number;
+    type: CategoryPurposeType; 
+    personId: string;
+    categoryId: string;
+}
