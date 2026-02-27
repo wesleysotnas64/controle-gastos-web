@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './CategoryManagerPage.css'
+import './CategoryManagerPage.css';
 import { CategoryPurpose, type CategoryPurposeType, type CreateCategoryDTO } from '../../types/Category';
 import api from '../../services/api';
 import { API_ROUTES } from '../../services/apiRoutes';
@@ -36,9 +36,10 @@ function CategoryManagerPage() {
 
     return (
         <>
-        <div className="manager-container">
-            <div className="registration-area">
-                <input className="input-description"
+        <div className="category-container">
+            <div className="category-registration-area">
+                <input
+                    className="category-input-description"
                     type="text"
                     placeholder="Descrição (ex: Lazer, Salário...)"
                     value={description}
@@ -46,16 +47,19 @@ function CategoryManagerPage() {
                 />
 
                 <select
+                    className="category-select-purpose"
                     value={purpose}
                     onChange={(e) => setPurpose(Number(e.target.value) as CategoryPurposeType)}
-                    className="select-purpose"
                 >
                     <option value={CategoryPurpose.Income}>Receita</option>
                     <option value={CategoryPurpose.Expense}>Despesa</option>
                     <option value={CategoryPurpose.Both}>Ambas (Receita/Despesa)</option>
                 </select>
 
-                <button onClick={handleRegister} className="btn-register">
+                <button
+                    className="category-btn-register"
+                    onClick={handleRegister}
+                >
                     Cadastrar
                 </button>
             </div>

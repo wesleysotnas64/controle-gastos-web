@@ -1,22 +1,29 @@
-.manager-container {
+.category-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.registration-area {
+.category-container .category-registration-area {
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
 }
 
-.registration-area .input-description {
-    width: 300px;
+.category-container .category-registration-area .category-input-description {
+    width: 50%;
+    background-color: rgb(25, 33, 36);
+    border: 1px solid rgb(51, 82, 91);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
 }
 
-.select-purpose {
+.category-select-purpose {
     background-color: rgb(25, 33, 36);
     border: 1px solid rgb(51, 82, 91);
     color: white;
@@ -26,8 +33,13 @@
     cursor: pointer;
 }
 
-/* Estiliza as opções dentro do select (funciona em alguns navegadores) */
-.select-purpose option {
-    background-color: rgb(35, 43, 46);
+.category-btn-register {
+    background-color: #0b6136;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }

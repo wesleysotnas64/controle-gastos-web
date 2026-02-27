@@ -4,13 +4,13 @@ import './Header.css';
 function Header () {
     return (
         <>
-        <div className="main-container">
+        <div className="header-main-container">
             <h1>Controle de Gastos</h1>
-            <div className="navigation-area">
-                <Link to="/" className="nav-link">Dashboard</Link>
-                <Link to="/transacoes" className="nav-link">Transações</Link>
-                <Link to="/pessoas" className="nav-link">Pessoas</Link>
-                <Link to="/categorias" className="nav-link">Categorias</Link>
+            <div className="header-navigation-area">
+                <Link to="/" className="header-nav-link">Dashboard</Link>
+                <Link to="/transacoes" className="header-nav-link">Transações</Link>
+                <Link to="/pessoas" className="header-nav-link">Pessoas</Link>
+                <Link to="/categorias" className="header-nav-link">Categorias</Link>
             </div>
         </div>
         </>

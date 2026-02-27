@@ -42,7 +42,7 @@ function ListCategory() {
     };
 
     return (
-        <div className="list-container">
+        <div className="category-list-container">
             <h2>Categorias Cadastradas</h2>
             {loading ? (
                 <p>Carregando...</p>
