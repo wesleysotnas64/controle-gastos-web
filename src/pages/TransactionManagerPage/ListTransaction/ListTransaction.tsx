@@ -3,7 +3,7 @@ import './ListTransaction.css';
 import type { TransactionListItemDTO } from '../../../types/Transaction';
 import api from '../../../services/api';
 import { API_ROUTES } from '../../../services/apiRoutes';
-import { CategoryPurpose } from '../../../types/Category';
+import VisualPurpose from '../../../components/VisualPurpose/VisualPurpose';
 
 function ListTransaction(){
     const [transactions, setTransactions] = useState<TransactionListItemDTO[]>([]);
@@ -24,24 +24,8 @@ function ListTransaction(){
         fetchTransactions();
     }, []);
 
-    // Função auxiliar para definir a classe de cor baseada no propósito
-    const getPurposeStyle = (purpose: number) => {
-        switch (purpose) {
-            case CategoryPurpose.Income: return "tag-income";   // Receita
-            case CategoryPurpose.Expense: return "tag-expense"; // Despesa
-            case CategoryPurpose.Both: return "tag-both";       // Ambas
-            default: return "";
-        }
-    };
-
-    const getPurposeLabel = (purpose: number) => {
-        if (purpose === CategoryPurpose.Income) return "Receita";
-        if (purpose === CategoryPurpose.Expense) return "Despesa";
-        return "Ambas";
-    };
-
     return(
-        <div className="list-container">
+        <div className="transaction-list-container">
             <h2>Transações Cadastradas</h2>
             {loading ? (
                 <p>Carregando...</p>
@@ -52,7 +36,7 @@ function ListTransaction(){
                             <th>Descrição</th>
                             <th>Pessoa</th>
                             <th>Categoria</th>
-                            <th style={{textAlign: 'center'}}>Tipo</th>
+                            <th>Tipo</th>
                             <th>Valor</th>
                         </tr>
                     </thead>
@@ -62,10 +46,8 @@ function ListTransaction(){
                                 <td>{t.description}</td>
                                 <td>{t.personName}</td>
                                 <td>{t.categoryDescription}</td>
-                                <td style={{textAlign: 'center'}}>
-                                    <span className={`purpose-tag ${getPurposeStyle(t.type)}`}>
-                                        {getPurposeLabel(t.type)}
-                                    </span>
+                                <td>
+                                    <VisualPurpose purpose={t.type} />
                                 </td>
                                 <td className={t.type === 1 ? "value-income" : "value-expense"}>
                                     {t.type === 1 ? "+ " : "- "}

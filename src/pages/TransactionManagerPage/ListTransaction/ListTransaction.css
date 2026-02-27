@@ -1,4 +1,10 @@
-.transaction-table {
+.transaction-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.transaction-list-container .transaction-table {
     background-color: rgb(35, 43, 46);
     width: 100%;
     border-radius: 10px;
@@ -33,24 +39,10 @@
     border-top: none;
 }
 
-
-/* No seu ListTransaction.css */
-
-.value-income {
-    color: #81c784; /* Verde */
-    font-weight: bold;
-    text-align: right;
+.transaction-list-container .transaction-table .value-income {
+    color: #81c784;
 }
 
-.value-expense {
-    color: #e57373; /* Vermelho */
-    font-weight: bold;
-    text-align: right;
+.transaction-list-container .transaction-table .value-expense {
+    color: #e57373;
 }
-
-/* Alinhando os cabeçalhos de valor à direita para combinar com os números */
-.transaction-table th:last-child,
-.transaction-table td:last-child {
-    text-align: right;
-}
-

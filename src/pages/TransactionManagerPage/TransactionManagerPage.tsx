@@ -100,18 +100,18 @@ function TransactionManagerPage(){
     };
 
     return (
-        <div className="manager-container">
+        <div className="transaction-container">
             <div className="transaction-registration-area">
                 <div className="transaction-input-area">
                     <input
-                        className="input-description" 
+                        className="transaction-input-description" 
                         type="text"
                         placeholder="Descrição" 
                         value={description} onChange={(e) => setDescription(e.target.value)} 
                     />
 
                     <input
-                        className="input-value" 
+                        className="transaction-input-value" 
                         type="text"
                         inputMode="numeric"
                         value={formatCurrency(value)}
@@ -120,13 +120,13 @@ function TransactionManagerPage(){
                 </div>
                 <div className="transaction-select-area">
                     {/* Select de Tipo (Income/Expense) */}
-                    <select className="select-type" value={type} onChange={(e) => setType(Number(e.target.value) as CategoryPurposeType)}>
+                    <select className="transaction-select-type" value={type} onChange={(e) => setType(Number(e.target.value) as CategoryPurposeType)}>
                         <option value={CategoryPurpose.Income}>Receita</option>
                         <option value={CategoryPurpose.Expense}>Despesa</option>
                     </select>
 
                     {/* Select de Pessoas */}
-                    <select className="select-people" value={personId} onChange={(e) => setPersonId(e.target.value)}>
+                    <select className="transaction-select-people" value={personId} onChange={(e) => setPersonId(e.target.value)}>
                         <option value="">Selecione uma Pessoa</option>
                         {people
                             .filter(p => {
@@ -147,7 +147,7 @@ function TransactionManagerPage(){
 
                     {/* Select de Categorias */}
                     <select 
-                        className="select-category"
+                        className="transaction-select-category"
                         value={categoryId} 
                         onChange={(e) => setCategoryId(e.target.value)}
                     >
@@ -165,7 +165,12 @@ function TransactionManagerPage(){
                     </select>
                 </div>
 
-                <button onClick={handleRegister} className="btn-register">Registrar</button>
+                <button
+                    className="btn-register"
+                    onClick={handleRegister}
+                >
+                    Cadastrar
+                </button>
             </div>
             <ListTransaction />
         </div>
