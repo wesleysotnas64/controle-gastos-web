@@ -10,11 +10,11 @@
     display: flex;
     align-items: center;
     background-color: #3b3b3b;
-    height: 50px;
     border-radius: 10px;
-    width: 30%;
-    justify-content: space-between;
+    padding: 10px;
+    justify-content: space-around;
     transition: 0.3s;
+    gap: 20px;
 }
 
 .header-nav-link {

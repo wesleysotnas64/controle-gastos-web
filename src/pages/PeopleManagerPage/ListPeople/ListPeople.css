@@ -1,9 +1,10 @@
-.list-container {
-    padding-left: 20px;
-    padding-right: 20px;
+.people-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
 }
 
-.people-table {
+.people-list-container .people-table {
     background-color: rgb(35, 43, 46);
     width: 100%;
     border-radius: 10px;
@@ -12,7 +13,7 @@
     overflow: hidden;
 }
 
-.people-table th {
+.people-list-container .people-table th {
     background-color: rgb(37, 53, 58);
     color: #e2e8f0;
 }
@@ -25,27 +26,47 @@
 
 /* --- EFEITO ZEBRA --- */
 /* Pinta as linhas ímpares (odd) com uma cor levemente mais clara ou escura */
-.people-table tbody tr:nth-child(odd) {
+.people-list-container .people-table tbody tr:nth-child(odd) {
     background-color: rgb(38, 48, 52); 
 }
 
-.people-table tbody tr:hover {
+.people-list-container .people-table tbody tr:hover {
     background-color: rgb(45, 80, 92);
-    /* cursor: pointer;         */
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
-.people-table th {
+.people-list-container .people-table th {
     border-top: none;
 }
 
-.actions-cell {
+.people-list-container .people-actions-cell {
     display: flex;
     gap: 8px;
-    justify-content: center;
+    align-items: center;
 }
 
-.btn-edit, .btn-delete {
+/* Primeira coluna (Nome) */
+.people-list-container .people-table th:nth-child(1),
+.people-list-container .people-table td:nth-child(1) {
+    width: 60%;
+    text-align: left;
+}
+
+/* Segunda coluna (Idade) */
+.people-list-container .people-table th:nth-child(2),
+.people-list-container .people-table td:nth-child(2) {
+    width: 20%;
+    text-align: left;
+}
+
+/* Terceira coluna (Operações) */
+.people-list-container .people-table th:nth-child(3),
+.people-list-container .people-table td:nth-child(3) {
+    width: 20%;
+    text-align: left;
+}
+
+.people-list-container .people-btn-edit, .people-list-container .people-btn-delete {
     padding: 6px 12px;
     border: none;
     border-radius: 4px;
@@ -55,20 +76,20 @@
     transition: 0.2s;
 }
 
-.btn-edit {
-    background-color: #0284c7; /* Azul */
+.people-list-container .people-btn-edit {
+    background-color: #0b3a61;
     color: white;
 }
 
-.btn-edit:hover {
-    background-color: #0369a1;
+.people-list-container .people-btn-edit:hover {
+    background-color: #0d5e8d;
 }
 
-.btn-delete {
-    background-color: #b91c1c; /* Vermelho */
+.people-list-container .people-btn-delete {
+    background-color: #770909;
     color: white;
 }
 
-.btn-delete:hover {
+.people-list-container .people-btn-delete:hover {
     background-color: #991b1b;
 }

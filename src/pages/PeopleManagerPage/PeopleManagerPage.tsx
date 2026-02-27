@@ -3,7 +3,7 @@ import ListPeople from "./ListPeople/ListPeople";
 import api from "../../services/api";
 import { API_ROUTES } from "../../services/apiRoutes";
 import type { Person } from "../../types/Person";
-import './PeopleManagerPage.css'
+import './PeopleManagerPage.css';
 
 function PeopleManagerPage () {
 
@@ -63,9 +63,9 @@ function PeopleManagerPage () {
 
     return (
         <>
-            <div className="manager-container">
-                <div className="registration-area">
-                    <input className="input-name"
+            <div className="people-container">
+                <div className="people-registration-area">
+                    <input className="people-input-name"
                         type="text"
                         placeholder="Nome da Pessoa"
                         value={name}
@@ -73,6 +73,7 @@ function PeopleManagerPage () {
                     />
                     
                     <input
+                        className="people-input-age"
                         type="number"
                         placeholder="Idade"
                         min="0"
@@ -88,12 +89,12 @@ function PeopleManagerPage () {
                     {
                         registrationMode ?
                         (
-                            <button className="btn-register" onClick={handleRegister}>Cadastrar</button>
+                            <button className="btn btn-register" onClick={handleRegister}>Cadastrar</button>
                         ) :
                         (
                             <>
-                                <button className="btn-save" onClick={handleUpdate}>Salvar Alterações</button>
-                                <button className="btn-cancel" onClick={clearForm}>Cancelar</button>
+                                <button className="btn btn-save" onClick={handleUpdate}>Salvar Alterações</button>
+                                <button className="btn btn-cancel" onClick={clearForm}>Cancelar</button>
                             </>
                         )
                     }

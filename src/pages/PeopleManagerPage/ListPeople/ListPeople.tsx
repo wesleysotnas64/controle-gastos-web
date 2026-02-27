@@ -43,11 +43,10 @@ function ListPeople({ onEditClick }: ListPeopleProps) {
 
     return(
         <>
-            <div className="list-container">
+            <div className="people-list-container">
                 <h2>Pessoas Cadastradas</h2>
                 
-                {
-                    loading ?
+                {loading ?
                     (
                         <p>Carregando...</p>
                     ) :
@@ -57,7 +56,7 @@ function ListPeople({ onEditClick }: ListPeopleProps) {
                                 <tr>
                                     <th>Nome</th>
                                     <th>Idade</th>
-                                    <th style={{textAlign: 'center'}}>Operações</th>
+                                    <th>Operações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,15 +65,15 @@ function ListPeople({ onEditClick }: ListPeopleProps) {
                                         <tr key={person.id}>
                                             <td>{person.name}</td>
                                             <td>{person.age} {person.age <= 1 ? "ano" : "anos"}</td>
-                                            <td className="actions-cell">
+                                            <td className="people-actions-cell">
                                                 <button
-                                                    className="btn-edit"
+                                                    className="people-btn-edit"
                                                     onClick={() => onEditClick(person)}
                                                 >
                                                     Alterar
                                                 </button>
                                                 <button
-                                                    className="btn-delete"
+                                                    className="people-btn-delete"
                                                     onClick={() => handleDelete({ id: person.id, name: person.name })}
                                                 >
                                                     Remover
