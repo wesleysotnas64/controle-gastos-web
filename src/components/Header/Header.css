@@ -1,22 +1,31 @@
-.main-container {
+.header-main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    padding: 20px;
 }
 
-.nav-link {
+.header-navigation-area {
+    display: flex;
+    align-items: center;
+    background-color: #3b3b3b;
+    height: 50px;
+    border-radius: 10px;
+    width: 30%;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.header-nav-link {
     color: #e2e8f0;
     text-decoration: none;
     padding: 10px;
-    margin: 20px;
-    border: 1px solid #242424;
     border-radius: 10px;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: 0.3s;
 }
 
-.nav-link:hover {
-    color: #2995c3;
-    border: 1px solid #2995c3;
+.header-nav-link:hover {
+    background-color: #505050;
 }
