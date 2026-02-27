@@ -49,38 +49,5 @@
 .category-table th:nth-child(2),
 .category-table td:nth-child(2) {
     width: 20%;
-    text-align: center;
-}
-
-/* Estilo base para a "etiqueta" de tipo */
-.category-table .purpose-tag {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Verde para Receita */
-.category-table .tag-income {
-    background-color: rgba(76, 175, 80, 0.2);
-    color: #81c784;
-    border: 1px solid #4caf50;
-}
-
-/* Vermelho para Despesa */
-.category-table .tag-expense {
-    background-color: rgba(244, 67, 54, 0.2);
-    color: #e57373;
-    border: 1px solid #f44336;
-}
-
-/* Roxo para Ambas */
-.category-table .tag-both {
-    background-color: rgba(156, 39, 176, 0.2);
-    color: #ba68c8;
-    border: 1px solid #9c27b0;
+    text-align: left;
 }

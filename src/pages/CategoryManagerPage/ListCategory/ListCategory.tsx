@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { CategoryPurpose, type Category } from "../../../types/Category";
+import { type Category } from "../../../types/Category";
 import api from "../../../services/api";
 import { API_ROUTES } from "../../../services/apiRoutes";
 import './ListCategory.css'
+import VisualPurpose from "../../../components/VisualPurpose/VisualPurpose";
 
 function ListCategory() {
 
@@ -25,22 +26,6 @@ function ListCategory() {
         fetchCategories();
     }, []);
 
-    // Função auxiliar para definir a classe de cor baseada no propósito
-    const getPurposeStyle = (purpose: number) => {
-        switch (purpose) {
-            case CategoryPurpose.Income: return "tag-income";   // Receita
-            case CategoryPurpose.Expense: return "tag-expense"; // Despesa
-            case CategoryPurpose.Both: return "tag-both";       // Ambas
-            default: return "";
-        }
-    };
-
-    const getPurposeLabel = (purpose: number) => {
-        if (purpose === CategoryPurpose.Income) return "Receita";
-        if (purpose === CategoryPurpose.Expense) return "Despesa";
-        return "Ambas";
-    };
-
     return (
         <div className="category-list-container">
             <h2>Categorias Cadastradas</h2>
@@ -51,7 +36,7 @@ function ListCategory() {
                     <thead>
                         <tr>
                             <th>Descrição</th>
-                            <th style={{textAlign: 'center'}}>Tipo</th>
+                            <th>Tipo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,10 +44,8 @@ function ListCategory() {
                             
                             <tr key={cat.id}>
                                 <td>{cat.description}</td>
-                                <td style={{textAlign: 'center'}}>
-                                    <span className={`purpose-tag ${getPurposeStyle(cat.purpose)}`}>
-                                        {getPurposeLabel(cat.purpose)}
-                                    </span>
+                                <td>
+                                    <VisualPurpose purpose={cat.purpose} />
                                 </td>
                             </tr>
                         ))}
