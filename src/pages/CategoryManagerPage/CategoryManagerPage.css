@@ -6,6 +6,12 @@
 
 .category-container .category-registration-area {
     display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.category-container .category-inputs-btns {
+    display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
@@ -13,7 +19,6 @@
 }
 
 .category-container .category-registration-area .category-input-description {
-    width: 50%;
     background-color: rgb(25, 33, 36);
     border: 1px solid rgb(51, 82, 91);
     color: white;
@@ -21,6 +26,7 @@
     border-radius: 5px;
     outline: none;
     font-size: 1rem;
+    flex-grow: 1;
 }
 
 .category-select-purpose {

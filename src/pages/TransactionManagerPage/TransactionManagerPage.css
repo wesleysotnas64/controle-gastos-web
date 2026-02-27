@@ -10,7 +10,7 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 70%;
 }
 
 .transaction-container .transaction-registration-area input,
@@ -25,6 +25,11 @@
     transition: 0.3s;
 }
 
+.transaction-input-area .transaction-inputs-numerics {
+    display: flex;
+    gap: 10px;
+}
+
 .transaction-select-area select {
     cursor: pointer;
 }
@@ -32,9 +37,11 @@
 .transaction-select-area,
 .transaction-input-area {
     display: flex;
-    width: 65%;
-    justify-content: space-between;
-    flex-grow: 1;
+    width: 100%;
+}
+
+.transaction-input-area {
+    flex-direction: column;
 }
 
 .transaction-input-description{
@@ -44,7 +51,6 @@
 .transaction-input-value {
     width: 20%;
     text-align: right;
-    margin-left: 20px;
 }
 
 .transaction-select-area {

@@ -6,13 +6,19 @@
 
 .people-container .people-registration-area {
     display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.people-container .people-inputs-btns {
+    display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-.people-container .people-registration-area input {
+.people-container .people-registration-area .people-inputs-btns input {
     background-color: rgb(25, 33, 36);
     border: 1px solid rgb(51, 82, 91);
     color: white;
@@ -22,8 +28,8 @@
     font-size: 1rem;
 }
 
-.people-container .people-registration-area .people-input-name {
-    width: 50%;
+.people-inputs-btns .people-input-name {
+    flex-grow: 1;
 }
 
 .people-container .people-registration-area .btn {
@@ -53,4 +59,11 @@
 }
 .people-container .people-registration-area .btn-cancel:hover {
     background-color: #6e6e6e;
+}
+
+.char-counter {
+    color: #6e6e6e;
+}
+.limit-reached {
+    color: #a10d0d;
 }

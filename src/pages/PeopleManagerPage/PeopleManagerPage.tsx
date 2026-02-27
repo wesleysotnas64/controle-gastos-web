@@ -65,39 +65,46 @@ function PeopleManagerPage () {
         <>
             <div className="people-container">
                 <div className="people-registration-area">
-                    <input className="people-input-name"
-                        type="text"
-                        placeholder="Nome da Pessoa"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    
-                    <input
-                        className="people-input-age"
-                        type="number"
-                        placeholder="Idade"
-                        min="0"
-                        max="150"
-                        value={age}
-                        onChange={(e) => {
-                            const val = e.target.value;
-                            if(val === "" || (Number(val) >= 0 && Number(val) < 151)){
-                                setAge(val === "" ? "" : Math.floor(Number(val)));
-                            }
-                        }}
-                    />
-                    {
-                        registrationMode ?
-                        (
-                            <button className="btn btn-register" onClick={handleRegister}>Cadastrar</button>
-                        ) :
-                        (
-                            <>
-                                <button className="btn btn-save" onClick={handleUpdate}>Salvar Alterações</button>
-                                <button className="btn btn-cancel" onClick={clearForm}>Cancelar</button>
-                            </>
-                        )
-                    }
+                    <div className="people-inputs-btns">
+                        <input className="people-input-name"
+                            type="text"
+                            placeholder="Nome da Pessoa"
+                            maxLength={200}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        
+                        <input
+                            className="people-input-age"
+                            type="number"
+                            placeholder="Idade"
+                            min="0"
+                            max="150"
+                            value={age}
+                            onChange={(e) => {
+                                const val = e.target.value;
+                                if(val === "" || (Number(val) >= 0 && Number(val) < 151)){
+                                    setAge(val === "" ? "" : Math.floor(Number(val)));
+                                }
+                            }}
+                        />
+                        {
+                            registrationMode ?
+                            (
+                                <button className="btn btn-register" onClick={handleRegister}>Cadastrar</button>
+                            ) :
+                            (
+                                <>
+                                    <button className="btn btn-save" onClick={handleUpdate}>Salvar Alterações</button>
+                                    <button className="btn btn-cancel" onClick={clearForm}>Cancelar</button>
+                                </>
+                            )
+                        }
+                    </div>
+
+                    <span className={`char-counter ${name.length === 200 ? "limit-reached" : ""}`}>
+                        {name.length}/200
+                    </span>
                 </div>
 
                 <ListPeople onEditClick={startEdit} />

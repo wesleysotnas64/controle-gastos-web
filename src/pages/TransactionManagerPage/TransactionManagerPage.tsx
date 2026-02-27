@@ -8,18 +8,17 @@ import { API_ROUTES } from "../../services/apiRoutes";
 import type { TransactionCreateDTO } from "../../types/Transaction";
 
 function TransactionManagerPage(){
-    // Estados do Formulário
+    
     const [description, setDescription] = useState("");
     const [value, setValue] = useState<number>(0);
     const [type, setType] = useState<CategoryPurposeType>(CategoryPurpose.Income);
     const [personId, setPersonId] = useState("");
     const [categoryId, setCategoryId] = useState("");
 
-    // Estados para carregar os Selects
+    
     const [people, setPeople] = useState<Person[]>([]);
     const [categories, setCategories] = useState<Category[]>([]);
     
-    // Carregar dados iniciais
     useEffect(() => {
         const loadInitialData = async () => {
             try {
@@ -103,20 +102,26 @@ function TransactionManagerPage(){
         <div className="transaction-container">
             <div className="transaction-registration-area">
                 <div className="transaction-input-area">
-                    <input
-                        className="transaction-input-description" 
-                        type="text"
-                        placeholder="Descrição" 
-                        value={description} onChange={(e) => setDescription(e.target.value)} 
-                    />
+                    <div className="transaction-inputs-numerics">
+                        <input
+                            className="transaction-input-description" 
+                            type="text"
+                            placeholder="Descrição" 
+                            maxLength={400}
+                            value={description} onChange={(e) => setDescription(e.target.value)} 
+                        />
 
-                    <input
-                        className="transaction-input-value" 
-                        type="text"
-                        inputMode="numeric"
-                        value={formatCurrency(value)}
-                        onChange={handleMoneyInput} 
-                    />
+                        <input
+                            className="transaction-input-value" 
+                            type="text"
+                            inputMode="numeric"
+                            value={formatCurrency(value)}
+                            onChange={handleMoneyInput} 
+                        />
+                    </div>
+                    <span className={`char-counter ${description.length === 400 ? "limit-reached" : ""}`}>
+                        {description.length}/400
+                    </span>
                 </div>
                 <div className="transaction-select-area">
                     {/* Select de Tipo (Income/Expense) */}
