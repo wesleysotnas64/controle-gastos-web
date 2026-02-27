@@ -3,7 +3,7 @@ import type { DashboardCategorySummaryDTO, DashboardCategoryTotalDTO } from "../
 import "./TotalsByCategory.css";
 import api from "../../../services/api";
 import { API_ROUTES } from "../../../services/apiRoutes";
-import { CategoryPurpose } from "../../../types/Category";
+import VisualPurpose from "../../../components/VisualPurpose/VisualPurpose";
 
 function TotalsByCategory() {
 
@@ -37,22 +37,6 @@ function TotalsByCategory() {
         return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     };
 
-    // Função auxiliar para definir a classe de cor baseada no propósito
-    const getPurposeStyle = (purpose: number) => {
-        switch (purpose) {
-            case CategoryPurpose.Income: return "tag-income";   // Receita
-            case CategoryPurpose.Expense: return "tag-expense"; // Despesa
-            case CategoryPurpose.Both: return "tag-both";       // Ambas
-            default: return "";
-        }
-    };
-
-    const getPurposeLabel = (purpose: number) => {
-        if (purpose === CategoryPurpose.Income) return "Receita";
-        if (purpose === CategoryPurpose.Expense) return "Despesa";
-        return "Ambas";
-    };
-
     return(
         <div className="total-by-category">
             <div className="total-values-area">
@@ -70,7 +54,7 @@ function TotalsByCategory() {
                 </div>
                 <div className="box-total-area balance-box">
                     <div className="value-area">
-                        <p className={grandTotalBalance >= 0 ? "positive" : "negative"}>
+                        <p className={grandTotalBalance >= 0 ? "value-income" : "value-expense"}>
                             {formatCurrency(grandTotalBalance)}
                         </p>
                     </div>
@@ -96,12 +80,10 @@ function TotalsByCategory() {
                             <tr key={item.category.id}>
                                 <td>{item.category.description}</td>
                                 <td>
-                                    <span className={`purpose-tag ${getPurposeStyle(item.category.purpose)}`}>
-                                        {getPurposeLabel(item.category.purpose)}
-                                    </span>
+                                    <VisualPurpose purpose={item.category.purpose} />
                                 </td>
-                                <td className="value-income">{formatCurrency(item.totalIncome)}</td>
-                                <td className="value-expense">{formatCurrency(item.totalExpense)}</td>
+                                <td>{formatCurrency(item.totalIncome)}</td>
+                                <td>{formatCurrency(item.totalExpense)}</td>
                                 <td className={item.balance >= 0 ? "value-income" : "value-expense"}>
                                     {formatCurrency(item.balance)}
                                 </td>
@@ -114,7 +96,9 @@ function TotalsByCategory() {
                             <td></td>
                             <td className="value-income">{formatCurrency(grandTotalIncome)}</td>
                             <td className="value-expense">{formatCurrency(grandTotalExpense)}</td>
-                            <td><strong>{formatCurrency(grandTotalBalance)}</strong></td>
+                            <td className={grandTotalBalance >= 0 ? "value-income" : "value-expense"}>
+                                <strong>{formatCurrency(grandTotalBalance)}</strong>
+                            </td>
                         </tr>
                     </tfoot>
                 </table>

@@ -56,7 +56,7 @@ function TotalsByPerson() {
                 </div>
                 <div className="box-total-area balance-box">
                     <div className="value-area">
-                        <p className={grandTotalBalance >= 0 ? "positive" : "negative"}>
+                        <p className={grandTotalBalance >= 0 ? "value-income" : "value-expense"}>
                             {formatCurrency(grandTotalBalance)}
                         </p>
                     </div>
@@ -83,8 +83,8 @@ function TotalsByPerson() {
                             {peopleTotals.map((item) => (
                                 <tr key={item.person.id}>
                                     <td>{item.person.name}</td>
-                                    <td className="value-income">{formatCurrency(item.totalIncome)}</td>
-                                    <td className="value-expense">{formatCurrency(item.totalExpense)}</td>
+                                    <td>{formatCurrency(item.totalIncome)}</td>
+                                    <td>{formatCurrency(item.totalExpense)}</td>
                                     <td className={item.balance >= 0 ? "value-income" : "value-expense"}>
                                         {formatCurrency(item.balance)}
                                     </td>

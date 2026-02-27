@@ -4,31 +4,33 @@
     gap: 20px;
     justify-content: center;
 }
+
 .total-values-area .box-total-area {
-    background-color: rgb(25, 31, 35);
+    background-color: #3b3b3b;
     width: 300px;
     border-radius: 10px;
     height: 100px;
 }
-.box-total-area {
+
+.total-values-area .box-total-area {
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
 
-.box-total-area .value-area {
+.total-values-area .box-total-area .value-area {
     flex-grow: 1;
     display: flex;
     align-items: center;
 }
 
-.box-total-area p {
+.total-values-area .box-total-area p {
     margin: 0px;
     font-size: 24pt;
     font-weight: bold;
 }
 
-.box-total-area label {
+.total-values-area .box-total-area label {
     margin: 0px;
     margin-top: auto;
 }
@@ -55,6 +57,14 @@
     border-top: 1px solid rgb(31, 62, 71);
     padding: 10px;
     text-align: left;
+}
+
+ .value-income {
+    color: #81c784;
+}
+
+ .value-expense {
+    color: #e57373;
 }
 
 /* --- EFEITO ZEBRA --- */
