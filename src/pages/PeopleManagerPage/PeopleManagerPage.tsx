@@ -36,12 +36,11 @@ function PeopleManagerPage () {
             const newPerson = {name, age: Number(age)};
             await api.post(API_ROUTES.PERSON.CREATE, newPerson);
             alert("Pessoa cadastrada com sucesso!");
-
             clearForm();
-
             window.location.reload(); // Solução temporária rápida para a lista atualizar sozinha
         } catch (error: any) {
-            alert(error.response?.data?.message || "Erro ao cadastrar pessoa.");
+            const errorMessage = error.response?.data?.message || "Erro ao cadastrar pessoa.";
+            alert(errorMessage);
         };
     };
 
@@ -55,9 +54,11 @@ function PeopleManagerPage () {
             };
             await api.put(API_ROUTES.PERSON.UPDATE(editingId), personData);
             alert("Dados atualizados!");
+            clearForm();
             window.location.reload();
-        } catch (error) {
-            alert("Erro ao atualizar.");
+        } catch (error: any) {
+            const errorMessage = error.response?.data?.message || "Erro ao atualizar.";
+            alert(errorMessage);
         }
     };
 
