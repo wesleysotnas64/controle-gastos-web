@@ -13,6 +13,11 @@
     overflow: hidden;
 }
 
+.people-list-container h2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 .people-list-container .people-table th {
     background-color: rgb(37, 53, 58);
     color: #e2e8f0;
