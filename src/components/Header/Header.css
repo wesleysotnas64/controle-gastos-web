@@ -6,6 +6,10 @@
     padding: 20px;
 }
 
+.header-main-container h1 {
+    margin: 10px;
+}
+
 .header-navigation-area {
     display: flex;
     align-items: center;
