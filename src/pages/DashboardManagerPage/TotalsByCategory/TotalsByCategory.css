@@ -1,7 +1,50 @@
-.total-by-person-table .value-income {
+.total-by-category-table .value-income {
     color: #81c784;
 }
 
-.total-by-person-table .value-expense {
+.total-by-category-table .value-expense {
     color: #e57373;
+}
+
+.total-by-category-table {
+    background-color: rgb(35, 43, 46);
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.total-by-category-table th,
+.total-by-category-table tfoot {
+    background-color: rgb(37, 53, 58);
+    color: #e2e8f0;
+}
+
+.total-by-category-table th,
+.total-by-category-table td,
+.total-by-category-table tfoot {
+    border-top: 1px solid rgb(31, 62, 71);
+    padding: 10px;
+    text-align: left;
+}
+
+/* --- EFEITO ZEBRA --- */
+/* Pinta as linhas ímpares (odd) com uma cor levemente mais clara ou escura */
+.total-by-category-table tbody tr:nth-child(odd) {
+    background-color: rgb(38, 48, 52); 
+}
+
+.total-by-category-table tbody tr:hover {
+    background-color: rgb(45, 80, 92);
+    transition: background-color 0.2s ease;
+}
+
+.total-by-category-table th {
+    border-top: none;
+}
+
+.table-footer {
+    font-weight: bold;
 }

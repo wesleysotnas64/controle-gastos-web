@@ -65,7 +65,7 @@ function TotalsByCategory() {
             {loading ? (
                 <p>Carregando categorias...</p>
             ) : (
-                <table className="total-by-person-table"> {/* Reaproveitando a classe da outra tabela */}
+                <table className="total-by-category-table"> {/* Reaproveitando a classe da outra tabela */}
                     <thead>
                         <tr>
                             <th>Categoria</th>
